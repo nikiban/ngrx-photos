@@ -1,33 +1,33 @@
 <div class="container py-3">
-    <div class="row justify-content-between">
-        <div class="col-4">
-            <h3>Photo Album</h3>
-        </div>
-        <div class="col-4">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search photos by title" [(ngModel)]="searchText">
-            </div>
-        </div>
-    </div>
-    <div class="row border p-3">
-        <!-- to show error message if any -->
-        <div class="col-12" *ngIf="(showError)">
-            <div class="alert alert-danger" role="alert">{{showError}}</div>
-        </div>
-        <!-- to show loading -->
-        <div class="col-12 text-center" *ngIf="(showLoading)">
-            Fetching Data...
-        </div>
-        <!-- to show data -->
-        <div class="col-12">
-            <div class="card-deck">
-                <div class="card mb-3" *ngFor="let item of photoItems | searchList:'title':searchText">
-                    <img class="card-img-top" [src]="item.thumbnailUrl" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">{{item.title}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="row justify-content-between">
+		<div class="col-4">
+			<h3>Photo Album</h3>
+		</div>
+		<div class="col-4">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search photos by title" [(ngModel)]="searchText">
+			</div>
+		</div>
+	</div>
+	<div class="row border p-3">
+		<!-- to show error message if any -->
+		<div class="col-12" *ngIf="(showError)">
+			<div class="alert alert-danger" role="alert">{{showError}}</div>
+		</div>
+		<!-- to show loading -->
+		<div class="col-12 text-center" *ngIf="(showLoading)">
+			Fetching Data...
+		</div>
+		<!-- to show data -->
+		<div class="col-12">
+			<div class="card-deck">
+				<div class="card mb-3" *ngFor="let item of photoItems | searchList:'title':searchText">
+					<img class="card-img-top" [src]="item.thumbnailUrl" alt="Card image cap">
+					<div class="card-body">
+						<p class="card-text">{{item.title}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

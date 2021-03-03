@@ -21,7 +21,7 @@ export class PhotoListComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchText = '';
-    this.store.select('photoList').subscribe((data)=>{
+    this.store.select('photoList').subscribe((data) => {
       this.photoItems = data.list;
       this.showLoading = data.loading;
       this.showError = data.error;
